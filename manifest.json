@@ -1,0 +1,33 @@
+{
+  "name": "Youtube Interface Simplifier",
+  "version": "0.1.0",
+  "description": "Isn't it hard to get away from distractions in YT these days, it recommends you videos, autoplays it and make you distracted even if you want to just go on youtube for education.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "contextMenus",
+    "privacy",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+  ],
+  "host_permissions": ["https://*.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+ 
+
+  "action": {
+    
+    "default_title": "Youtube Simplified",
+    "default_popup": "popup.html"
+  },
+  
+  "manifest_version": 3
+}
